@@ -1,17 +1,19 @@
 const mongoose = require('mongoose');
 
+// creation of the sauce schema for the database
+
 const SaucesSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: [true, 'must provide a valid name...'],
-        trim: true,
-        maxLength: [20, 'name cannot be more than 20 characters'],
-        minLength: [3, 'name cannot be less than 3 characters']
-    },
-    required: {
-        type: Boolean,
-        default: false
-    }
+    userId: { type: String, required: true },
+    name: { type: String, required: true },
+    manufacturer: { type: String, required: true },
+    description: { type: String, required: true },
+    mainPepper: { type: String, required: true },
+    imageUrl: { type: String, required: true },
+    heat: { type: Number, required: true },
+    likes: { type: Number },
+    dislikes: { type: Number },
+    usersLiked: { type: [String] },
+    usersDisliked: { type: [String] }
 })
 
 

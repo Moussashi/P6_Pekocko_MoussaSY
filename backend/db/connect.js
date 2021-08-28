@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// function for us to sync db and the server 
 const connectDB = (url) => {
 
     return mongoose
